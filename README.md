@@ -1,2 +1,530 @@
-# thequietcup
-Cozy Coffee Shop
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Dream Business</title>
+<meta name="description" content="Welcome to my dream business website!">
+<!-- Pretty font (optional) -->
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+/* === COLORS you can change === */
+:root{
+--brand:linear-gradient(to right, #5D4037 0%, #D7A86E 100%); /* header color */
+--brand-dark:#5D4037; /* buttons + footer */
+--text:#333; /* text color */
+--card:#fff8f5; /* product card bg */
+--line:#e8dfdb; /* soft border */
+--radius:16px; /* rounded corners */
+}
+*{box-sizing:border-box}
+body{
+margin:0; font-family:'League Spartan', Arial, sans-serif;
+color:var(--text); background:#FFF3E0; line-height:1.45;
+}
+/* Header */
+header{position:sticky; top:0; z-index:10; background:var(--brand); color:#fff; padding:20px 14px; box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.wrap{max-width:1000px; margin:0 auto; display:flex; align-items:center; gap:12px; justify-content:space-between; flex-wrap:wrap}
+.brand{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none}
+.brand img{width:50px; height:50px; object-fit:cover; border-radius:10px}
+.brand b{font-size:1.3rem}
+nav{display:flex; gap:8px; flex-wrap:wrap}
+.btn{background:var(--brand-dark); color:#fff; text-decoration:none; padding:10px 14px; border-radius:10px; font-weight:700}
+.btn:hover{filter:brightness(1.05)}
+main{max-width:1000px; margin:26px auto; padding:0 14px}
+/* Hero */
+.hero{display:grid; gap:12px; padding:24px; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(to right, #EDD6A4 0%, #EDDAB2 100%)}
+.hero h1{margin:0; font-size:2rem}
+.hero p{margin:0 0 6px; color:#6b5e58}
+.hero .cta{display:flex; gap:8px; flex-wrap:wrap}
+/* Product grid */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; margin-top:18px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:0 8px 20px
+rgba(0,0,0,.07); display:flex; flex-direction:column}
+.card img{width:100%; height:160px; object-fit:cover}
+.pad{padding:12px}
+.title{margin:0 0 4px; font-size:1.05rem; font-weight:800}
+.meta{margin:0 0 6px; color:#6b5e58}
+.row{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:auto}
+.price{font-weight:800}
+.add{border:none; background:var(--brand-dark); color:#fff; padding:8px 10px; border-radius:10px; font-weight:800; cursor:pointer}
+/* About + Contact sections */
+section{scroll-margin-top:90px}
+h2{margin:22px 0 6px; font-size:1.6rem; color:#5D4037}
+.about, .contact{border:1px solid var(--line); border-radius:var(--radius); padding:16px; background:#EDDCB9}
+/* Reserve/Inquire + Business Information */
+.reserve-business-info-container {display:flex; flex-wrap:wrap; gap:20px}
+.tiles{flex: 1 1 300px}
+/* Footer */
+footer{margin-top:28px; background:var(--brand-dark); color:#fff; padding:20px 14px}
+.foot{max-width:1000px; margin:0 auto; display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+.foot a{color:#fff; text-decoration:none}
+@media (max-width:600px){ .card img{height:140px} }
+</style>
+</head>
+<body>
+<!-- Header with logo + links -->
+<header>
+<div class="wrap">
+<!-- Change logo.png to your logo file -->
+<a class="brand" href="#top"><img src="C:\Users\Jessa R. Evangelista\Downloads\Logo.png.png" alt="My Business Logo"><b>The Quite Cup</b></a>
+<nav>
+<a class="btn" href="#menu">Menu</a>
+<a class="btn" href="#library">Library</a>
+<a class="btn" href="#gallery">Gallery</a>
+<a class="btn" href="#about">About</a>
+<a class="btn" href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+<main id="top">
+<!-- HERO / Welcome -->
+<section class="hero" aria-labelledby="hero-title">
+<h1 id="hero-title">Welcome to My Dream Business!</h1>
+<p>Slow down with specialty coffee, fresh pastries, and shelves of books & manga.</p>
+<p>Study, read, or catch up with friends—your nook is waiting.</p>
+<div class="cta">
+<a class="btn" href="#menu">See Menu</a>
+<a class="btn" href="#library">See Library</a>
+<a class="btn" href="#gallery">See Gallery</a>
+<a class="btn" href="#contact">Visit / Contact</a>
+</div>
+</section>
+
+<!-- MENU -->
+<h2 id="menu">Menu</h2>
+<p class="meta">Brewed with care and best enjoyed with a chapter or two.</p>
+<div class="grid menu" id="menuGrid" aria-live="polite">
+<!-- Coffee -->
+<article class="card" data-type="coffee">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\coffee1.jpg" alt="Coffee">
+<div class="pad">
+<h3 class="title">Violet Latte</h3>
+<p class="meta">Lavender-infused latte with velvety microfoam.</p>
+<div class="row">
+<span class="price">₱160</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="coffee">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\coffee2.jpg" alt="Coffee">
+<div class="pad">
+<h3 class="title">Spanish Latte</h3>
+<p class="meta">Sweet, creamy, and bold—our bestseller.</p>
+<div class="row">
+<span class="price">₱160</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="coffee">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\coffee3.jpg" alt="Coffee">
+<div class="pad">
+<h3 class="title">Cold Brew</h3>
+<p class="meta">Slow-steeped, low-acid, super smooth.</p>
+<div class="row">
+<span class="price">₱150</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="coffee">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\coffee9.jpg" alt="coffee">
+<div class="pad">
+<h3 class="title">Cocoa Cloud</h3>
+<p class="meta">Fluffy. Frothy. Fantastic.</p>
+<div class="row">
+<span class="price">₱160</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<!-- Tea / Matcha -->
+<article class="card" data-type="tea">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\coffee4.jpg" alt="tea">
+<div class="pad">
+<h3 class="title">Uji Matcha Latte</h3>
+<p class="meta">Ceremonial-grade with creamy milk.</p>
+<div class="row">
+<span class="price">₱175</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="tea">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\coffee5.jpg" alt="tea">
+<div class="pad">
+<h3 class="title">Cherry Earl Grey Milk Tea</h3>
+<p class="meta">Cherry on top, Bergamot, black tea, and honey pearls.</p>
+<div class="row">
+<span class="price">₱175</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="tea">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\coffee6.jpg" alt="tea">
+<div class="pad">
+<h3 class="title">Golden Milk Tea</h3>
+<p class="meta">Golden color but sweet Milk tea with Turmeric.</p>
+<div class="row">
+<span class="price">₱150</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="tea">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\coffee7.jpg" alt="tea">
+<div class="pad">
+<h3 class="title">Velvet Bloom</h3>
+<p class="meta">Sip the softness of serenity flower.</p>
+<div class="row">
+<span class="price">₱160</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<!-- JUICE BLENDS -->
+<article class="card" data-type="juice">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\fruit1.jpg" alt="juice">
+<div class="pad">
+<h3 class="title">Sunberry Spark</h3>
+<p class="meta">A splash of sunshine in every sip.</p>
+<div class="row">
+<span class="price">₱165</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="juice">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\fruit2.jpg" alt="juice">
+<div class="pad">
+<h3 class="title">Citrus Muse</h3>
+<p class="meta">Bright. Bold. Beautifully you.</p>
+<div class="row">
+<span class="price">₱145</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="juice">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\fruit3.jpg" alt="juice">
+<div class="pad">
+<h3 class="title">Tropical Whisper</h3>
+<p class="meta">Let paradise melt on your tongue.</p>
+<div class="row">
+<span class="price">₱160</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="juice">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\fruit4.jpg" alt="juice">
+<div class="pad">
+<h3 class="title">Blush Bloom</h3>
+<p class="meta">A rosy twist that refreshes the soul.</p>
+<div class="row">
+<span class="price">₱180</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<!-- PASTRIES -->
+<article class="card" data-type="pastry">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\bun1.jpg" alt="pastry">
+<div class="pad">
+<h3 class="title">Cinnamon Drift</h3>
+<p class="meta">Soft, sweet, and straight from the heart.</p>
+<div class="row">
+<span class="price">₱99</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="pastry">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\bun2.jpg" alt="pastry">
+<div class="pad">
+<h3 class="title">Golden Whirl Croissant</h3>
+<p class="meta">A buttery twist of pure golden bliss.</p>
+<div class="row">
+<span class="price">₱75</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="pastry">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\bun3.jpg" alt="pastry">
+<div class="pad">
+<h3 class="title">Choco Craze Bar</h3>
+<p class="meta">One small bite, endless crazy delight.</p>
+<div class="row">
+<span class="price">₱120</span>
+<button class="add" type="button">Add</button>
+</article>
+
+<article class="card" data-type="pastry">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\bun4.jpg" alt="pastry">
+<div class="pad">
+<h3 class="title">Matcha Truffle Whisper</h3>
+<p class="meta">Soft as a secret, rich as your dreams.</p>
+<div class="row">
+<span class="price">₱135</span>
+<button class="add" type="button">Add</button>
+</article>
+</div>
+
+<div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
+<button class="btn ghost" data-filter="all" type="button">All</button>
+<button class="btn ghost" data-filter="coffee" type="button">Coffee</button>
+<button class="btn ghost" data-filter="tea" type="button">Tea & Matcha</button>
+<button class="btn ghost" data-filter="juice" type="button">Juice Blends</button>
+<button class="btn ghost" data-filter="pastry" type="button">Pastries</button>
+<a id="order" class="btn" href="https://wa.me/" target="_blank" rel="noreferrer">Order on WhatsApp</a>
+</div>
+</div>
+</section>
+
+<!-- LIBRARY -->
+<h2 id="library">Library</h2>
+<p class="meta">“Read what you love, and love what you read — because the best stories are the ones that stay with you forever.”</p>
+<div class="grid menu" id="menuGrid" aria-live="polite">
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\manhwa1.jpg" alt="manhwa">
+<div class="pad">
+<h3 class="title">Manhwa</h3>
+<p class="meta">“Every page unfolds like a sunset — fleeting, beautiful, and impossible to forget.”</p>
+<div class="row">
+<button class="add" type="button">Read</button>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\manga1.jpg" alt="Manga">
+<div class="pad">
+<h3 class="title">Manga</h3>
+<p class="meta">“In every black and white page, a world of colors comes alive in your imagination.”</p>
+<div class="row">
+<button class="add" type="button">Read</button>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\manhua1.jpg" alt="Manhua">
+<div class="pad">
+<h3 class="title">Manhua</h3>
+<p class="meta">“In every stroke of ink, a world of dreams unfolds — tender, vivid, and timeless.”</p>
+<div class="row">
+<button class="add" type="button">Read</button>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\history1.jpg" alt="History">
+<div class="pad">
+<h3 class="title">History Books</h3>
+<p class="meta">“In the quiet turning of each page, the echoes of the past whisper their truths.”</p>
+<div class="row">
+<button class="add" type="button">Read</button>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\horror1.jpg" alt="Horror">
+<div class="pad">
+<h3 class="title">Horror</h3>
+<p class="meta">“The story you read doesn’t end when you close the book — it lingers, whispering in the dark.”</p>
+<div class="row">
+<button class="add" type="button">Read</button>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\fantasy1.jpg" alt="Fantasy">
+<div class="pad">
+<h3 class="title">Fantasy</h3>
+<p class="meta">“Each chapter is a spell, each word a spark. Together they weave worlds beyond the known.”</p>
+<div class="row">
+<button class="add" type="button">Read</button>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\bible1.jpg" alt="Bible">
+<div class="pad">
+<h3 class="title">Bible</h3>
+<p class="meta">“In the beginning was the Word, and the Word was with God, and the Word was God.” —John 1:1</p>
+<div class="row">
+<button class="add" type="button">Read</button>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\sci-fiction1.jpg" alt="Sci-Fic">
+<div class="pad">
+<h3 class="title">Science-Fiction</h3>
+<p class="meta">“Science fiction is where dreams meet destiny, and imagination dares to outpace reality.”</p>
+<div class="row">
+<button class="add" type="button">Read</button>
+</article>
+</div>
+
+<!-- GALLERY -->
+<h2 id="gallery">Gallery</h2>
+<p class="meta">“Every picture is a poem without words, painted with the language of the soul.”</p>
+<div class="grid menu" id="menuGrid" aria-live="polite">
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\gallery1.jpg" alt="Gallery">
+<div class="pad">
+<h3 class="title">Veranda</h3>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\gallery2.jpg" alt="Gallery">
+<div class="pad">
+<h3 class="title">Coffee Bar</h3>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\gallery3.jpg" alt="Gallery">
+<div class="pad">
+<h3 class="title">Pastry Bar</h3>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\gallery4.jpg" alt="Gallery">
+<div class="pad">
+<h3 class="title">Outside View</h3>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\gallery5.jpg" alt="Gallery">
+<div class="pad">
+<h3 class="title">Library Section</h3>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\gallery6.jpg" alt="Gallery">
+<div class="pad">
+<h3 class="title">Tell your story notes</h3>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\gallery7.jpg" alt="Gallery">
+<div class="pad">
+<h3 class="title">Photobooth Side</h3>
+</article>
+
+<article class="card">
+<img src="C:\Users\Jessa R. Evangelista\Downloads\gallery8.jpg" alt="Gallery">
+<div class="pad">
+<h3 class="title">Pet Zone</h3>
+</article>
+</div>
+
+<!-- ABOUT -->
+<h2 id="about">☕ Welcome to The Quiet Cup 🌿</h2>
+<section class="contact">
+<p><b>Our Story:</b> Every dream begins with a simple wish — and ours started with the vision of a peaceful afternoon spent in a cozy coffee shop, surrounded by the comforting aroma of freshly brewed coffee and shelves full of books waiting to be read. What was once a dream to find such a place has now become a reality — <b>The Quiet Cup</b>, a haven created with love, passion, and a touch of serenity.</p>
+
+<p>At The Quiet Cup, we believe that coffee is more than just a drink — it’s an experience. Our shop is designed to be your safe space:</p>
+<ul>
+<li>📚 <b>A reading corner</b> filled with books to let your mind wander and your soul relax.</li>
+<li>🐾 <b>A pet zone</b> where your furry friends are always welcome.</li>
+<li>📸 <b>A photo booth</b> to capture memories with your favorite people (and pets!).</li>
+<li>💌 <b>Tell Notes</b> — where you can share your experiences, stories, or just a kind word to brighten someone’s day.</li>
+</ul>
+
+<p>We take pride in what we serve. ☕</p>
+<ul>
+<li>🌱 We use only <b>fresh ingredients</b>, ensuring every cup and plate is made with care.</li>
+<li>🌏 We’re <b>kind to the planet</b>, making sustainable choices every step of the way.</li>
+<li>🤝 We <b>support local growers</b>, because we believe in giving back to our community and celebrating local talent.</li>
+</ul>
+
+<p>So whether you’re here to read, write, relax, or simply enjoy a cup of comfort — <b>The Quiet Cup</b> is your little corner of calm in a busy world.</p>
+
+<p><i><h3>✨ Sit back. Sip slowly. Stay awhile. ✨</p></i></h3>
+</section>
+
+<div class="reserve-business-info-container"
+
+<!-- CONTACT / RESERVATION -->
+<div class="tiles">
+<section id="contact">
+<h2 id="reserve/inquire">Reserve/Inquire</h2>
+<div class="card">
+<form class="contact" onsubmit="handleSubmit(event)">
+<div class="field">
+<label for="name">Full Name</label>
+<input id="name" name="name" required placeholder="Juan Dela Cruz" />
+</div>
+<div class="field">
+<label for="phone">Mobile</label>
+<input id="phone" name="phone" required placeholder="09xx xxx xxxx" />
+</div>
+<div class="field">
+<label for="email">Email (optional)</label>
+<input id="email" name="email" type="email" placeholder="you@example.com" />
+</div>
+<div class="field">
+<label for="date">Date</label>
+<input id="date" name="date" type="date" required />
+</div>
+<div class="field">
+<label for="time">Time</label>
+<input id="time" name="time" type="time" required />
+</div>
+<div class="field">
+<label for="pax"># of Seats</label>
+<select id="pax" name="pax" required>
+<option value="">Select…</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6+</option>
+</select>
+</div>
+<label for="msg">Message</label>
+<div class="field">
+<textarea id="msg" name="message" rows="4" placeholder="Any requests? (e.g., silent nook, outlet, window seat)"></textarea>
+</div>
+<button class="btn" type="submit">Send Request</button>
+<p id="formNote" class="muted" role="status" aria-live="polite"></p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- BUSINESS INFORMATION -->
+<div class="tiles">
+<h2 id="business information">Business Information</h2>
+<section class="contact">
+<p>Instagram: <a href="contact:https://www.instagram.com/jssvnglst?igsh=MThma2k2b2gxbDBzbA%3D%3D">@jssvnglst</a></p>
+<p>Email: <a href="mailto:evangelista.jessa.rabang@gmal.com">evangelista.jessa.rabang@gmal.com</a></p>
+<p>Phone: <a href="tel:+639171234567">+63 917 123 4567</a></p>
+<!-- Replace the map link with your city -->
+<p>Find us on the map: <a href="https://www.google.com/maps/search/coffee+shop+near+me" target="_blank" rel="noopener">Open
+Map</a></p>
+<p class="muted" style="margin-top:12px"><h3>For events and student org collabs, email us your deck—10% student discount with ID.</h3></p>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+<div class="foot">
+<div>© 2025 My Dream Business</div>
+<div>
+<a href="#top">Back to top ↑</a>
+</div>
+</div>
+</div>
+</section>
+</footer>
+
+<!-- Optional JavaScript (just for fun) -->
+<script>
+// Make the "Add" buttons give a quick success message
+document.querySelectorAll('.add').forEach(btn=>{
+btn.addEventListener('click', ()=>{
+const old = btn.textContent;
+btn.textContent = 'Added ✓';
+setTimeout(()=> btn.textContent = old, 1000);
+});
+});
+// Menu filter buttons
+document.querySelectorAll('[data-filter]').forEach(btn => {
+btn.addEventListener('click', () => {
+const type = btn.getAttribute('data-filter');
+document.querySelectorAll('#menuGrid [data-type]').forEach(card => {
+card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
+});
+});
+});
+</script>
+</body>
+</html>
